@@ -23,9 +23,6 @@ public class KanaChartFragment extends Fragment {
 		final String[] chartTitles = getActivity().getResources().getStringArray(R.array.kana_type);
 		final String chartTitle = chartTitles[chartType.ordinal()];
 		
-		
-		String test = "Test";
-		
 		final View rootView = inflater.inflate(R.layout.fragment_kana_chart, container, false);
 		final TextView dummyTextView = (TextView) rootView.findViewById(R.id.tvSectionLabel);
 		dummyTextView.setText(chartTitle);
