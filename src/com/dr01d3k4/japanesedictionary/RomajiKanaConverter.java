@@ -22,6 +22,8 @@ public class RomajiKanaConverter {
 			consonant = "h";
 		} else if (kana.equals("み") || kana.equals("ミ")) {
 			consonant = "m";
+		} else if (kana.equals("り") || kana.equals("リ")) {
+			consonant = "r";
 		} else if (kana.equals("ぎ") || kana.equals("ギ")) {
 			consonant = "g";
 		} else if (kana.equals("じ") || kana.equals("ジ")) {

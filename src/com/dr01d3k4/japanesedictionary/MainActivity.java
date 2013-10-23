@@ -24,12 +24,6 @@ public class MainActivity extends Activity {
 	
 	
 	@Override
-	protected void onResume() {
-		super.onResume();
-	}
-	
-	
-	@Override
 	public boolean onCreateOptionsMenu(final Menu menu) {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
