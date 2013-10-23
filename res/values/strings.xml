@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="app_name">Japanese Dictionary</string>
+	<string name="action_settings">Settings</string>
+
+	<!-- Titles -->
+	<string name="title_searchresult_list">Search Results</string>
+	<string name="title_word_detail">Word Details</string>
+	<string name="title_activity_romanization_test">Kana to Romaji</string>
+
+	<!-- Home page -->
+	<string name="search_hint">Enter word to search</string>
+	<string name="search">Search</string>
+
+	<!-- Word overview test -->
+	<string name="kanji_test">重力, 和辞典, 重力, 和辞典</string>
+	<string name="kana_test">じゅうりょく、えいわじてん</string>
+	<string name="english_test">(n) Gravity, (n) Japanese-English Dictionary</string>
+
+	<!-- Word learning states -->
+	<string name="learning_progress">Learning Progress</string>
+	<string name="title_activity_kana_chart">Kana Chart</string>
+
+	<!-- Menu actions -->
+	<string name="action_kana_chart">Kana chart</string>
+	<string name="action_kana_chart_condensed">あアA</string>
+
+	<!-- Kana chart -->
+	<string name="title_hiragana_chart">ひらがな Hiragana</string>
+	<string name="title_katakana_chart">カタカナ Katakana</string>
+
+	<!-- Romanization -->
+	<string name="romanize_hint">Enter text to romanize</string>
+	<string name="enter">Enter</string>
+
+</resources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:paddingBottom="2dp"
+	android:paddingLeft="2dp"
+	android:paddingRight="2dp"
+	android:paddingTop="2dp" >
+
+	<RatingBar
+		android:id="@+id/rbLearningState"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:layout_alignParentTop="true"
+		android:contentDescription="@string/learning_progress"
+		android:isIndicator="true"
+		android:numStars="1"
+		android:rating="0"
+		android:stepSize="0.5" />
+
+	<TextView
+		android:id="@+id/tvKanji"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentTop="true"
+		android:layout_toRightOf="@id/rbLearningState"
+		android:padding="@dimen/word_overview_padding"
+		android:singleLine="true"
+		android:text="@string/kanji_test"
+		android:textAppearance="?android:attr/textAppearanceLarge" />
+
+	<TextView
+		android:id="@+id/tvKana"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true"
+		android:layout_below="@+id/tvKanji"
+		android:layout_toRightOf="@id/rbLearningState"
+		android:padding="@dimen/word_overview_padding"
+		android:singleLine="true"
+		android:text="@string/kana_test"
+		android:textSize="@dimen/kana_label" />
+
+	<TextView
+		android:id="@+id/tvEnglish"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true"
+		android:layout_below="@id/tvKana"
+		android:padding="@dimen/word_overview_padding"
+		android:singleLine="true"
+		android:text="@string/english_test"
+		android:textSize="@dimen/english_label" />
+
+</RelativeLayout>
