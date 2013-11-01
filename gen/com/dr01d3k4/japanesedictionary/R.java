@@ -43,24 +43,27 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_kana_chart=0x7f0a0011;
-        public static final int action_settings=0x7f0a0010;
+        public static final int action_kana_chart=0x7f0a0014;
+        public static final int action_settings=0x7f0a0013;
         public static final int btEnterButton=0x7f0a0006;
         public static final int btSearchButton=0x7f0a0002;
         public static final int btTryRomanizationTest=0x7f0a0003;
         public static final int btTryToKanaTest=0x7f0a0004;
         public static final int etSearchText=0x7f0a0001;
+        public static final int etToKanaText=0x7f0a000a;
         public static final int etToRomanizeText=0x7f0a0005;
         public static final int fgSearchResultList=0x7f0a0008;
         public static final int flContainer=0x7f0a0000;
         public static final int flSearchResultDetailContainer=0x7f0a0009;
-        public static final int rbLearningState=0x7f0a000c;
+        public static final int rbLearningState=0x7f0a000f;
+        public static final int swHiraganaOrKatakana=0x7f0a000b;
+        public static final int tvDisplayKana=0x7f0a000c;
         public static final int tvDisplayRomanized=0x7f0a0007;
-        public static final int tvEnglish=0x7f0a000f;
-        public static final int tvKana=0x7f0a000e;
-        public static final int tvKanji=0x7f0a000d;
-        public static final int tvSearchResultDetail=0x7f0a000b;
-        public static final int tvSectionLabel=0x7f0a000a;
+        public static final int tvEnglish=0x7f0a0012;
+        public static final int tvKana=0x7f0a0011;
+        public static final int tvKanji=0x7f0a0010;
+        public static final int tvSearchResultDetail=0x7f0a000e;
+        public static final int tvSectionLabel=0x7f0a000d;
     }
     public static final class layout {
         public static final int activity_kana_chart=0x7f030000;
@@ -76,10 +79,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
          */
         public static final int activity_searchresult_list=0x7f030003;
         public static final int activity_searchresult_twopane=0x7f030004;
-        public static final int activity_word_detail=0x7f030005;
-        public static final int fragment_kana_chart=0x7f030006;
-        public static final int fragment_word_detail=0x7f030007;
-        public static final int word_overview=0x7f030008;
+        public static final int activity_to_kana_test=0x7f030005;
+        public static final int activity_word_detail=0x7f030006;
+        public static final int fragment_kana_chart=0x7f030007;
+        public static final int fragment_word_detail=0x7f030008;
+        public static final int word_overview=0x7f030009;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -107,6 +111,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /**  Home page 
          */
         public static final int search_hint=0x7f070006;
+        public static final int switch_hiragana=0x7f070014;
+        public static final int switch_kana=0x7f070016;
+        public static final int switch_katakana=0x7f070015;
         public static final int title_activity_kana_chart=0x7f07000c;
         public static final int title_activity_romanization_test=0x7f070004;
         public static final int title_activity_to_kana_test=0x7f070005;

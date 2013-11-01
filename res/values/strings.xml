@@ -35,5 +35,8 @@
 	<string name="romanize_hint">Enter kana to romanize</string>
 	<string name="to_kana_hint">Enter romaji to convert to kana</string>
 	<string name="enter">Enter</string>
+	<string name="switch_hiragana">Hiragana</string>
+	<string name="switch_katakana">Katakana</string>
+	<string name="switch_kana">Kana type: </string>
 
 </resources>

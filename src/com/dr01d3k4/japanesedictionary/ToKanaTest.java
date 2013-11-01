@@ -7,7 +7,9 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.dr01d3k4.japanesedictionary.util.KanaType;
@@ -18,15 +20,14 @@ public class ToKanaTest extends Activity {
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_romanization_test);
+		setContentView(R.layout.activity_to_kana_test);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
-		// getActionBar().setTitle(R.string.title_activity_to_kana_test);
 		
-		final EditText toRomanizeEditText = (EditText) findViewById(R.id.etToRomanizeText);
-		toRomanizeEditText.addTextChangedListener(new TextWatcher() {
+		final EditText toKanaEditText = (EditText) findViewById(R.id.etToKanaText);
+		toKanaEditText.addTextChangedListener(new TextWatcher() {
 			@Override
 			public void afterTextChanged(final Editable s) {
-				convertKanaToRomaji();
+				convertRomajiToKana();
 			}
 			
 			
@@ -37,9 +38,16 @@ public class ToKanaTest extends Activity {
 			@Override
 			public void onTextChanged(final CharSequence arg0, final int start, final int before, final int count) {}
 		});
-		toRomanizeEditText.setHint(R.string.to_kana_hint);
-		toRomanizeEditText.setFocusableInTouchMode(true);
-		toRomanizeEditText.requestFocus();
+		toKanaEditText.setFocusableInTouchMode(true);
+		toKanaEditText.requestFocus();
+		
+		final Switch kanaSwitch = (Switch) findViewById(R.id.swHiraganaOrKatakana);
+		kanaSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				convertRomajiToKana();
+			}
+		});
 	}
 	
 	
@@ -54,15 +62,17 @@ public class ToKanaTest extends Activity {
 	}
 	
 	
-	private void convertKanaToRomaji() {
-		final EditText toRomanizeEditText = (EditText) findViewById(R.id.etToRomanizeText);
-		final TextView romanizedDisplay = (TextView) findViewById(R.id.tvDisplayRomanized);
+	private void convertRomajiToKana() {
+		final EditText toKanaEditText = (EditText) findViewById(R.id.etToKanaText);
+		final TextView kanaDisplay = (TextView) findViewById(R.id.tvDisplayKana);
+		final Switch kanaSwitch = (Switch) findViewById(R.id.swHiraganaOrKatakana);
+		final KanaType kanaType = (kanaSwitch.isChecked()) ? KanaType.HIRAGANA : KanaType.KATAKANA;
 		
-		romanizedDisplay.setText(RomajiToKana.romajiToKana(toRomanizeEditText.getText().toString(), KanaType.HIRAGANA));
+		kanaDisplay.setText(RomajiToKana.romajiToKana(toKanaEditText.getText().toString(), kanaType));
 	}
 	
 	
 	public void onEnterClicked(final View view) {
-		convertKanaToRomaji();
+		convertRomajiToKana();
 	}
 }

@@ -9,7 +9,7 @@
 	tools:context=".RomanizationTest" >
 
 	<EditText
-		android:id="@+id/etToRomanizeText"
+		android:id="@+id/etToKanaText"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:layout_alignBaseline="@+id/btEnterButton"
@@ -17,7 +17,7 @@
 		android:layout_alignParentTop="true"
 		android:layout_toLeftOf="@id/btEnterButton"
 		android:focusableInTouchMode="true"
-		android:hint="@string/romanize_hint"
+		android:hint="@string/to_kana_hint"
 		android:singleLine="true" >
 
 		<requestFocus />
@@ -32,12 +32,23 @@
 		android:onClick="onEnterClicked"
 		android:text="@string/enter" />
 
-	<TextView
-		android:id="@+id/tvDisplayRomanized"
+	<Switch
+		android:id="@+id/swHiraganaOrKatakana"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_alignParentLeft="true"
-		android:layout_below="@id/etToRomanizeText"
+		android:layout_below="@id/btEnterButton"
+		android:checked="true"
+		android:text="@string/switch_kana"
+		android:textOff="@string/switch_katakana"
+		android:textOn="@string/switch_hiragana" />
+
+	<TextView
+		android:id="@+id/tvDisplayKana"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true"
+		android:layout_below="@id/swHiraganaOrKatakana"
 		android:text=""
 		android:textIsSelectable="true"
 		android:textSize="16sp" />
