@@ -16,45 +16,101 @@ public class RomajiToKana {
 		"ぱ", "ぴ", "ぷ", "ぺ", "ぽ", //
 		"や", "い", "ゆ", "いぇ", "よ", //
 		"ら", "り", "る", "れ", "ろ", // 
-		"わ", "うぃ", "う", "うぇ", "を", // 
-		"ん", "", "", "", "", //
+		"わ", "ゐ", "う", "ゑ", "を", // 
 		"きゃ", "きぃ", "きゅ", "きぇ", "きょ", //
-		"ちゃ", "ち", "ちゅ", "ちぇ", "ちょ"};
+		"ぎゃ", "ぎぃ", "ぎゅ", "ぎぇ", "ぎょ", //
+		"しゃ", "し", "しゅ", "しぇ", "しょ", //
+		"じゃ", "じ", "じゅ", "じぇ", "じょ", //
+		"ちゃ", "ち", "ちゅ", "ちぇ", "ちょ", //
+		"つぁ", "つぃ", "つ", "つぇ", "つぉ", //
+		"つゃ", "つぃ", "つゅ", "つぃぇ", "つょ", //
+		"づぁ", "づぃ", "づ", "づぇ", "づぉ", //
+		"づゃ", "づぃ", "づゅ", "づぃぇ", "づょ", //
+		"にゃ", "にぃ", "にゅ", "にぇ", "にょ", //
+		"ひゃ", "ひぃ", "ひゅ", "ひぇ", "ひょ", //
+		"ふぁ", "ふぃ", "ふ", "ふぇ", "ふぉ", //
+		"ふゃ", "ふぃ", "ふゅ", "ふぇ", "ふょ", //
+		"びゃ", "びぃ", "びゅ", "びぇ", "びょ", //
+		"みゃ", "みぃ", "みゅ", "みぇ", "みょ", //
+		"ぴゃ", "ぴぃ", "ぴゅ", "ぴぇ", "ぴょ", //
+		"りゃ", "りぃ", "りゅ", "りぇ", "りょ", //
+		"うゃ", "ゐ", "うゅ", "ゑ", "うょ", //
+		"ぁ", "ぃ", "ぅ", "ぇ", "ぉ", //
+		"ヴぁ", "ヴぃ", "ヴ", "ヴぇ", "ヴぉ", //
+		"ヴゃ", "ヴぃ", "ヴゅ", "ヴぃぇ", "ヴょ" //
+	};
 	
-	private static String[] katakana = { };
+	private static String[] katakana = {"", // 
+		"ア", "イ", "ウ", "エ", "オ", //
+		"カ", "キ", "久", "ケ", "コ", //
+		"ガ", "ギ", "グ", "ゲ", "ゴ", //
+		"サ", "シ", "ス", "セ", "オ", //
+		"ザ", "ジ", "ズ", "ゼ", "ゾ", //
+		"タ", "チ", "ツ", "テ", "ト", //
+		"ダ", "ヂ", "ヅ", "デ", "ド", //
+		"ナ", "ニ", "ヌ", "ネ", "ノ", //
+		"ハ", "ヒ", "フ", "ヘ", "ホ", //
+		"バ", "ビ", "ブ", "ベ", "ボ", //
+		"マ", "ミ", "ム", "メ", "モ", //
+		"パ", "ピ", "プ", "ペ", "ポ", //
+		"ヤ", "イ", "ユ", "イェ", "ヨ", //
+		"ラ", "リ", "ル", "レ", "ロ", //
+		"ワ", "ヰ", "ウ", "ヱ", "ヲ", //
+		"キャ", "キィ", "キュ", "キェ", "キョ", //
+		"ギャ", "ギィ", "ギュ", "ギェ", "ギョ", //
+		"チャ", "チ", "チュ", "チェ", "チョ", //
+		"シャ", "シ", "シュ", "シェ", "ショ", //
+		"ジャ", "ジ", "ジュ", "ジェ", "ジョ", //
+		"ツァ", "ツィ", "ツ", "ツェ", "ツォ", //
+		"ツャ", "ツィ", "ツュ", "ツィェ", "ツョ", //
+		"ヅァ", "ヅィ", "ヅ", "ヅェ", "ヅォ", //
+		"ヅャ", "ヅィ", "ヅュ", "ヅィェ", "ヅョ", //
+		"ニャ", "ニィ", "ニュ", "ニェ", "ニョ", //
+		"ヒャ", "ヒィ", "ヒュ", "ヒェ", "ヒョ", //
+		"ファ", "フィ", "フ", "フェ", "フォ", //
+		"フャ", "フィ", "フュ", "フェ", "フョ", //
+		"ビャ", "ビィ", "ビュ", "ビェ", "ビョ", //
+		"ミャ", "ミィ", "ミュ", "ミェ", "ミョ", //
+		"ピャ", "ピィ", "ピュ", "ピェ", "ピョ", //
+		"リャ", "リィ", "リュ", "リェ", "リョ", //
+		"ウャ", "ヰ", "ウュ", "ヱ", "ウョ", //
+		"ァ", "ィ", "ゥ", "ェ", "ォ", //
+		"ヴァ", "ヴィ", "ヴ", "ヴェ", "ヴョ", //
+		"ヴャ", "ヴィ", "ヴュ", "ヴィェ", "ヴョ" //
+	};
 	
 	
 	public static String romajiToKana(String romaji, KanaType kanaType) {
 		StringBuilder kana = new StringBuilder();
 		StringBuilder currentKana = new StringBuilder();
-		String previousKana = "";
+		String currentRomaji = "";
+		String previousRomaji = "";
 		
 		int vowelColumn = -1;
 		int consonantRow = -1;
 		
 		for (int c = 0; c < romaji.length(); c++) {
-			String current = romaji.substring(c, c + 1);
+			currentRomaji = romaji.substring(c, c + 1);
 			
-			if (current.equals("a") || current.equals("i") || current.equals("u") || current.equals("e")
-				|| current.equals("o")) {
-				if (current.equals("a")) {
+			if (currentRomaji.equals("a") || currentRomaji.equals("i") || currentRomaji.equals("u")
+				|| currentRomaji.equals("e") || currentRomaji.equals("o")) {
+				if (currentRomaji.equals("a")) {
 					vowelColumn = 1;
-				} else if (current.equals("i")) {
+				} else if (currentRomaji.equals("i")) {
 					vowelColumn = 2;
-				} else if (current.equals("u")) {
+				} else if (currentRomaji.equals("u")) {
 					vowelColumn = 3;
-				} else if (current.equals("e")) {
+				} else if (currentRomaji.equals("e")) {
 					vowelColumn = 4;
-				} else if (current.equals("o")) {
+				} else if (currentRomaji.equals("o")) {
 					vowelColumn = 5;
 				}
 				
 				String currentKanaString = currentKana.toString();
 				// Check for double consonants for little tsu
-				if (currentKanaString.equals("kk")
-					|| currentKanaString.equals("gg") //
-					|| currentKanaString.equals("ss") || currentKanaString.equals("zz")
-					|| currentKanaString.equals("jj")) {
+				if (((currentKanaString.length() >= 2) && currentKanaString.substring(0, 1).equals(
+					currentKanaString.substring(1, 2)))
+					|| currentKanaString.equals("tch")) {
 					if (kanaType.equals(KanaType.HIRAGANA)) {
 						kana.append("っ");
 					} else {
@@ -69,46 +125,103 @@ public class RomajiToKana {
 					consonantRow = 1;
 				} else if (currentKanaString.equals("g")) {
 					consonantRow = 2;
+					
 				} else if (currentKanaString.equals("s")) {
 					consonantRow = 3;
 				} else if (currentKanaString.equals("z")) {
 					consonantRow = 4;
+					
 				} else if (currentKanaString.equals("t")) {
 					consonantRow = 5;
 				} else if (currentKanaString.equals("d")) {
 					consonantRow = 6;
+					
 				} else if (currentKanaString.equals("n")) {
 					consonantRow = 7;
+					
 				} else if (currentKanaString.equals("h")) {
 					consonantRow = 8;
 				} else if (currentKanaString.equals("b")) {
 					consonantRow = 9;
+					
 				} else if (currentKanaString.equals("m")) {
 					consonantRow = 10;
 				} else if (currentKanaString.equals("p")) {
 					consonantRow = 11;
+					
 				} else if (currentKanaString.equals("y")) {
 					consonantRow = 12;
 				} else if (currentKanaString.equals("r")) {
 					consonantRow = 13;
 				} else if (currentKanaString.equals("w")) {
 					consonantRow = 14;
+					
 				} else if (currentKanaString.equals("ky")) {
+					consonantRow = 15;
+				} else if (currentKanaString.equals("gy")) {
 					consonantRow = 16;
-				} else if (currentKanaString.equals("ch")) {
+					
+				} else if (currentKanaString.equals("sh")) {
 					consonantRow = 17;
+				} else if (currentKanaString.equals("j")) {
+					consonantRow = 18;
+					
+				} else if (currentKanaString.equals("ch")) {
+					consonantRow = 19;
+				} else if (currentKanaString.equals("ts")) {
+					consonantRow = 20;
+				} else if (currentKanaString.equals("tsy")) {
+					consonantRow = 21;
+				} else if (currentKanaString.equals("dz")) {
+					consonantRow = 22;
+				} else if (currentKanaString.equals("dzy")) {
+					consonantRow = 23;
+					
+				} else if (currentKanaString.equals("ny")) {
+					consonantRow = 24;
+					
+				} else if (currentKanaString.equals("hy")) {
+					consonantRow = 25;
+				} else if (currentKanaString.equals("f")) {
+					consonantRow = 26;
+				} else if (currentKanaString.equals("fy")) {
+					consonantRow = 27;
+				} else if (currentKanaString.equals("by")) {
+					consonantRow = 28;
+					
+				} else if (currentKanaString.equals("my")) {
+					consonantRow = 29;
+				} else if (currentKanaString.equals("py")) {
+					consonantRow = 30;
+					
+				} else if (currentKanaString.equals("ry")) {
+					consonantRow = 31;
+				} else if (currentKanaString.equals("wy")) {
+					consonantRow = 32;
+					
+				} else if (currentKanaString.equals("l") || currentKanaString.equals("x")) {
+					consonantRow = 33;
+				} else if (currentKanaString.equals("v")) {
+					consonantRow = 34;
+				} else if (currentKanaString.equals("vy")) {
+					consonantRow = 35;
 				}
 				
 				if ((vowelColumn > -1) && (consonantRow > -1)) {
-					int kanaLocation = vowelColumn + (consonantRow * 5); // 2d -> 1d array
 					String kanaFromTable = "";
-					if (kanaType.equals(KanaType.HIRAGANA)) {
-						kanaFromTable = hiragana[kanaLocation];
+					if (kanaType.equals(KanaType.KATAKANA) && (consonantRow == 0)
+						&& currentRomaji.equals(previousRomaji.substring(previousRomaji.length() - 1))) {
+						kanaFromTable = "ー";
 					} else {
-						kanaFromTable = katakana[kanaLocation];
+						int kanaLocation = vowelColumn + (consonantRow * 5); // 2d -> 1d array
+						if (kanaType.equals(KanaType.HIRAGANA)) {
+							kanaFromTable = hiragana[kanaLocation];
+						} else {
+							kanaFromTable = katakana[kanaLocation];
+						}
+						previousRomaji = currentKana.toString() + currentRomaji;
 					}
 					kana.append(kanaFromTable);
-					previousKana = currentKana.toString();
 				} else {
 					if (currentKana.length() > 1) {
 						kana.append(currentKana.toString().substring(0, 1));
@@ -117,35 +230,64 @@ public class RomajiToKana {
 						continue;
 					} else {
 						kana.append(currentKana.toString());
-						kana.append(current);
+						kana.append(currentRomaji);
+						previousRomaji = currentRomaji;
 					}
 				}
 				currentKana.delete(0, currentKana.length() + 1);
 				vowelColumn = consonantRow = -1;
 				
 				// Consonant
-			} else if (current.equals("k") || current.equals("g") // 
-				|| current.equals("s") || current.equals("j") || current.equals("z") // 
-				|| current.equals("t") || current.equals("c") || current.equals("d") //
-				|| current.equals("n") // 
-				|| current.equals("h") || current.equals("f") || current.equals("b") //
-				|| current.equals("m") || current.equals("p") //
-				|| current.equals("y") //
-				|| current.equals("r") //
-				|| current.equals("w")) {
-				currentKana.append(current);
+			} else if (currentRomaji.equals("k") || currentRomaji.equals("g") // 
+				|| currentRomaji.equals("s") || currentRomaji.equals("j") || currentRomaji.equals("z") // 
+				|| currentRomaji.equals("t") || currentRomaji.equals("c") || currentRomaji.equals("d") //
+				|| currentRomaji.equals("h") || currentRomaji.equals("f") || currentRomaji.equals("b") //
+				|| currentRomaji.equals("m") || currentRomaji.equals("p") //
+				|| currentRomaji.equals("y") //
+				|| currentRomaji.equals("r") //
+				|| currentRomaji.equals("w") //
+				|| currentRomaji.equals("l") || currentRomaji.equals("x") || currentRomaji.equals("v")) {
+				currentKana.append(currentRomaji);
+				
+			} else if (currentRomaji.equals("n")) {
+				if ((c + 1) < romaji.length()) {
+					String next = romaji.substring(c + 1, c + 2);
+					if (next.equals("a") || next.equals("i") || next.equals("u") || next.equals("e")
+						|| next.equals("o") || next.equals("y")) {
+						currentKana.append("n");
+					} else {
+						kana.append(currentKana);
+						currentKana.delete(0, currentKana.length());
+						if (kanaType.equals(KanaType.HIRAGANA)) {
+							kana.append("ん");
+						} else {
+							kana.append("ン");
+						}
+						if (next.equals("'")) {
+							c++;
+						}
+						previousRomaji = currentRomaji;
+					}
+				} else {
+					currentKana.append("n");
+				}
+			} else {
+				kana.append(currentKana);
+				currentKana.delete(0, currentKana.length());
 				
 				// Punctuation
-			} else if (current.equals(".")) {
-				kana.append("。");
-			} else if (current.equals("!")) {
-				kana.append("！");
-			} else if (current.equals("?")) {
-				kana.append("?");
-				
-				// Anything else
-			} else {
-				kana.append(current);
+				if (currentRomaji.equals(".")) {
+					kana.append("。");
+				} else if (currentRomaji.equals("!")) {
+					kana.append("！");
+				} else if (currentRomaji.equals("?")) {
+					kana.append("?");
+					
+					// Anything else
+				} else {
+					kana.append(currentRomaji);
+				}
+				previousRomaji = currentRomaji;
 			}
 		}
 		kana.append(currentKana);

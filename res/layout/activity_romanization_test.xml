@@ -34,11 +34,12 @@
 
 	<TextView
 		android:id="@+id/tvDisplayRomanized"
-		android:layout_width="fill_parent"
-		android:layout_height="fill_parent"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
 		android:layout_alignParentLeft="true"
 		android:layout_below="@id/btEnterButton"
 		android:text=""
-		android:textIsSelectable="true" />
+		android:textIsSelectable="true"
+		android:textSize="16sp" />
 
 </RelativeLayout>

@@ -217,6 +217,10 @@ public class KanaToRomaji {
 			// W set
 		} else if (kanaChar.equals("わ") || kanaChar.equals("ワ")) {
 			charToAdd = "wa";
+		} else if (kanaChar.equals("ゐ") || kanaChar.equals("ヰ")) {
+			charToAdd = "wi";
+		} else if (kanaChar.equals("ゑ") || kanaChar.equals("ヱ")) {
+			charToAdd = "we";
 		} else if (kanaChar.equals("を") || kanaChar.equals("ヲ")) {
 			charToAdd = "wo";
 			
