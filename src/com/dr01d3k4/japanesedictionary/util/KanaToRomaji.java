@@ -1,6 +1,6 @@
-package com.dr01d3k4.japanesedictionary;
+package com.dr01d3k4.japanesedictionary.util;
 
-public class RomajiKanaConverter {
+public class KanaToRomaji {
 	/**
 	 * Returns the consonant part of a kana if it ends with an -i
 	 * 

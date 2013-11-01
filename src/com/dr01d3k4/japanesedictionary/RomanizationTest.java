@@ -1,5 +1,7 @@
 package com.dr01d3k4.japanesedictionary;
 
+import com.dr01d3k4.japanesedictionary.util.KanaToRomaji;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
@@ -53,7 +55,7 @@ public class RomanizationTest extends Activity {
 		final EditText toRomanizeEditText = (EditText) findViewById(R.id.etToRomanizeText);
 		final TextView romanizedDisplay = (TextView) findViewById(R.id.tvDisplayRomanized);
 		
-		romanizedDisplay.setText(RomajiKanaConverter.kanaToRomaji(toRomanizeEditText.getText().toString()));
+		romanizedDisplay.setText(KanaToRomaji.kanaToRomaji(toRomanizeEditText.getText().toString()));
 	}
 	
 	
