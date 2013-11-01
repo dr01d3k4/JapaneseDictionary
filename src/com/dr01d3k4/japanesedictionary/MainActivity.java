@@ -49,4 +49,8 @@ public class MainActivity extends Activity {
 	public void onTestRomanizationClicked(final View view) {
 		startActivity(new Intent(this, RomanizationTest.class));
 	}
+	
+	public void onTestToKanaClicked(final View view) {
+		startActivity(new Intent(this, ToKanaTest.class));
+	}
 }

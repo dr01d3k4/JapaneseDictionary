@@ -37,9 +37,19 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_alignParentLeft="true"
-		android:layout_below="@+id/etSearchText"
+		android:layout_below="@id/etSearchText"
 		android:layout_marginTop="8dp"
 		android:onClick="onTestRomanizationClicked"
 		android:text="@string/title_activity_romanization_test" />
+
+	<Button
+		android:id="@+id/btTryToKanaTest"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true"
+		android:layout_below="@id/btTryRomanizationTest"
+		android:layout_marginTop="8dp"
+		android:onClick="onTestToKanaClicked"
+		android:text="@string/title_activity_to_kana_test" />
 
 </RelativeLayout>

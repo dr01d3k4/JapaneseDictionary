@@ -13,6 +13,8 @@
 		android:icon="@drawable/ic_launcher"
 		android:label="@string/app_name"
 		android:theme="@style/AppTheme" >
+
+		<!-- Main Activity -->
 		<activity
 			android:name="com.dr01d3k4.japanesedictionary.MainActivity"
 			android:label="@string/app_name"
@@ -25,6 +27,8 @@
 					android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
+
+		<!-- Search Result List Activity -->
 		<activity
 			android:name="com.dr01d3k4.japanesedictionary.searchresult.SearchResultListActivity"
 			android:label="@string/title_searchresult_list"
@@ -33,6 +37,8 @@
 				android:name="android.support.PARENT_ACTIVITY"
 				android:value="com.dr01d3k4.japanesedictionary.MainActivity" />
 		</activity>
+
+		<!-- Word Detail Activity -->
 		<activity
 			android:name="com.dr01d3k4.japanesedictionary.searchresult.WordDetailActivity"
 			android:label="@string/title_word_detail"
@@ -41,6 +47,8 @@
 				android:name="android.support.PARENT_ACTIVITY"
 				android:value="com.dr01d3k4.japanesedictionary.searchresult.SearchResultListActivity" />
 		</activity>
+
+		<!-- Kana Chart Activity -->
 		<activity
 			android:name="com.dr01d3k4.japanesedictionary.kanachart.KanaChartActivity"
 			android:label="@string/title_activity_kana_chart"
@@ -49,9 +57,22 @@
 				android:name="android.support.PARENT_ACTIVITY"
 				android:value="com.dr01d3k4.japanesedictionary.MainActivity" />
 		</activity>
+
+		<!-- Romanization Test Activity -->
 		<activity
 			android:name="com.dr01d3k4.japanesedictionary.RomanizationTest"
 			android:label="@string/title_activity_romanization_test"
+			android:parentActivityName="com.dr01d3k4.japanesedictionary.MainActivity"
+			android:windowSoftInputMode="stateAlwaysVisible" >
+			<meta-data
+				android:name="android.support.PARENT_ACTIVITY"
+				android:value="com.dr01d3k4.japanesedictionary.MainActivity" />
+		</activity>
+
+		<!-- To Kana Test Activity -->
+		<activity
+			android:name="com.dr01d3k4.japanesedictionary.ToKanaTest"
+			android:label="@string/title_activity_to_kana_test"
 			android:parentActivityName="com.dr01d3k4.japanesedictionary.MainActivity"
 			android:windowSoftInputMode="stateAlwaysVisible" >
 			<meta-data
