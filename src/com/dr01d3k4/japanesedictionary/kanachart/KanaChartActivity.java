@@ -8,12 +8,13 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 
 import com.dr01d3k4.japanesedictionary.R;
+import com.dr01d3k4.japanesedictionary.util.KanaType;
 
 
 public class KanaChartActivity extends FragmentActivity implements ActionBar.OnNavigationListener {
 	private static final String STATE_SELECTED_NAVIGATION_ITEM = "selected_navigation_item";
 	
-	private ChartType chartType = ChartType.HIRAGANA;
+	private KanaType chartType = KanaType.HIRAGANA;
 	
 	
 	@Override
@@ -36,7 +37,7 @@ public class KanaChartActivity extends FragmentActivity implements ActionBar.OnN
 	public void onRestoreInstanceState(final Bundle savedInstanceState) {
 		if (savedInstanceState.containsKey(STATE_SELECTED_NAVIGATION_ITEM)) {
 			final int selectedItem = savedInstanceState.getInt(STATE_SELECTED_NAVIGATION_ITEM);
-			chartType = ChartType.values()[selectedItem];
+			chartType = KanaType.values()[selectedItem];
 			getActionBar().setSelectedNavigationItem(selectedItem);
 		}
 	}
@@ -61,7 +62,7 @@ public class KanaChartActivity extends FragmentActivity implements ActionBar.OnN
 	
 	@Override
 	public boolean onNavigationItemSelected(final int position, final long id) {
-		chartType = ChartType.values()[position];
+		chartType = KanaType.values()[position];
 		
 		final KanaChartFragment kanaChart = new KanaChartFragment();
 		final Bundle arguments = new Bundle();

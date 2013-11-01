@@ -2,5 +2,5 @@
 package com.dr01d3k4.japanesedictionary;
 
 public final class BuildConfig {
-    public final static boolean DEBUG = true;
+	public final static boolean DEBUG = true;
 }

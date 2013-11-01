@@ -50,6 +50,7 @@ public class MainActivity extends Activity {
 		startActivity(new Intent(this, RomanizationTest.class));
 	}
 	
+	
 	public void onTestToKanaClicked(final View view) {
 		startActivity(new Intent(this, ToKanaTest.class));
 	}

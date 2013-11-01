@@ -20,8 +20,8 @@ public class WordDetailActivity extends FragmentActivity {
 		
 		if (savedInstanceState == null) {
 			final Bundle arguments = new Bundle();
-			arguments.putString(WordDetailFragment.ARG_ITEM_ID,
-				getIntent().getStringExtra(WordDetailFragment.ARG_ITEM_ID));
+			arguments.putString(WordDetailFragment.ARG_ITEM_ID, getIntent().getStringExtra(
+				WordDetailFragment.ARG_ITEM_ID));
 			final WordDetailFragment fragment = new WordDetailFragment();
 			fragment.setArguments(arguments);
 			getSupportFragmentManager().beginTransaction().add(R.id.flSearchResultDetailContainer, fragment).commit();

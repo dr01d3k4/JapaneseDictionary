@@ -1,7 +1,5 @@
 package com.dr01d3k4.japanesedictionary;
 
-import com.dr01d3k4.japanesedictionary.util.KanaToRomaji;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
@@ -11,6 +9,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.dr01d3k4.japanesedictionary.util.KanaType;
+import com.dr01d3k4.japanesedictionary.util.RomajiToKana;
 
 
 public class ToKanaTest extends Activity {
@@ -57,7 +58,7 @@ public class ToKanaTest extends Activity {
 		final EditText toRomanizeEditText = (EditText) findViewById(R.id.etToRomanizeText);
 		final TextView romanizedDisplay = (TextView) findViewById(R.id.tvDisplayRomanized);
 		
-		romanizedDisplay.setText(KanaToRomaji.kanaToRomaji(toRomanizeEditText.getText().toString()));
+		romanizedDisplay.setText(RomajiToKana.romajiToKana(toRomanizeEditText.getText().toString(), KanaType.HIRAGANA));
 	}
 	
 	

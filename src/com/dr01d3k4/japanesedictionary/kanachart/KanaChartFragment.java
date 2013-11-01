@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.dr01d3k4.japanesedictionary.R;
+import com.dr01d3k4.japanesedictionary.util.KanaType;
 
 
 public class KanaChartFragment extends Fragment {
@@ -19,7 +20,7 @@ public class KanaChartFragment extends Fragment {
 	
 	@Override
 	public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
-		final ChartType chartType = ChartType.values()[getArguments().getInt(ARG_CHART_TYPE)];
+		final KanaType chartType = KanaType.values()[getArguments().getInt(ARG_CHART_TYPE)];
 		final String[] chartTitles = getActivity().getResources().getStringArray(R.array.kana_type);
 		final String chartTitle = chartTitles[chartType.ordinal()];
 		
