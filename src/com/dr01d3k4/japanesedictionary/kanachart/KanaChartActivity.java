@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 
 import com.dr01d3k4.japanesedictionary.R;
@@ -15,7 +16,6 @@ public class KanaChartActivity extends FragmentActivity implements ActionBar.OnN
 	private static final String STATE_SELECTED_NAVIGATION_ITEM = "selected_navigation_item";
 	
 	private KanaType chartType = KanaType.HIRAGANA;
-	
 	
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {
@@ -30,6 +30,8 @@ public class KanaChartActivity extends FragmentActivity implements ActionBar.OnN
 		actionBar.setListNavigationCallbacks(new ArrayAdapter<String>(actionBar.getThemedContext(),
 			android.R.layout.simple_list_item_1, android.R.id.text1, getResources().getStringArray(R.array.kana_type)),
 			this);
+
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 	}
 	
 	
@@ -66,7 +68,7 @@ public class KanaChartActivity extends FragmentActivity implements ActionBar.OnN
 		
 		final KanaChartFragment kanaChart = new KanaChartFragment();
 		final Bundle arguments = new Bundle();
-		arguments.putInt(KanaChartFragment.ARG_CHART_TYPE, chartType.ordinal());
+		arguments.putInt(KanaChartFragment.ARG_KANA_TYPE, chartType.ordinal());
 		kanaChart.setArguments(arguments);
 		getSupportFragmentManager().beginTransaction().replace(R.id.flContainer, kanaChart).commit();
 		

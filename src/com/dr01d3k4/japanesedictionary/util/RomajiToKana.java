@@ -24,6 +24,7 @@ public class RomajiToKana {
 		"ちゃ", "ち", "ちゅ", "ちぇ", "ちょ", //
 		"つぁ", "つぃ", "つ", "つぇ", "つぉ", //
 		"つゃ", "つぃ", "つゅ", "つぃぇ", "つょ", //
+		"ぢゃ", "ぢぃ", "ぢゅ", "ぢぇ", "ぢょ", //
 		"づぁ", "づぃ", "づ", "づぇ", "づぉ", //
 		"づゃ", "づぃ", "づゅ", "づぃぇ", "づょ", //
 		"にゃ", "にぃ", "にゅ", "にぇ", "にょ", //
@@ -58,11 +59,12 @@ public class RomajiToKana {
 		"ワ", "ヰ", "ウ", "ヱ", "ヲ", //
 		"キャ", "キィ", "キュ", "キェ", "キョ", //
 		"ギャ", "ギィ", "ギュ", "ギェ", "ギョ", //
-		"チャ", "チ", "チュ", "チェ", "チョ", //
 		"シャ", "シ", "シュ", "シェ", "ショ", //
 		"ジャ", "ジ", "ジュ", "ジェ", "ジョ", //
+		"チャ", "チ", "チュ", "チェ", "チョ", //
 		"ツァ", "ツィ", "ツ", "ツェ", "ツォ", //
 		"ツャ", "ツィ", "ツュ", "ツィェ", "ツョ", //
+		"ヂャ", "ヂィ", "ヂュ", "ヂェ", "ヂョ", //
 		"ヅァ", "ヅィ", "ヅ", "ヅェ", "ヅォ", //
 		"ヅャ", "ヅィ", "ヅュ", "ヅィェ", "ヅョ", //
 		"ニャ", "ニィ", "ニュ", "ニェ", "ニョ", //
@@ -172,44 +174,49 @@ public class RomajiToKana {
 					consonantRow = 20;
 				} else if (currentKanaString.equals("tsy")) {
 					consonantRow = 21;
-				} else if (currentKanaString.equals("dz")) {
+				} else if (currentKanaString.equals("dy") || currentKanaString.equals("dj")) {
 					consonantRow = 22;
-				} else if (currentKanaString.equals("dzy")) {
+				} else if (currentKanaString.equals("dz")) {
 					consonantRow = 23;
-					
-				} else if (currentKanaString.equals("ny")) {
+				} else if (currentKanaString.equals("dzy")) {
 					consonantRow = 24;
 					
-				} else if (currentKanaString.equals("hy")) {
+				} else if (currentKanaString.equals("ny")) {
 					consonantRow = 25;
-				} else if (currentKanaString.equals("f")) {
+					
+				} else if (currentKanaString.equals("hy")) {
 					consonantRow = 26;
-				} else if (currentKanaString.equals("fy")) {
+				} else if (currentKanaString.equals("f")) {
 					consonantRow = 27;
-				} else if (currentKanaString.equals("by")) {
+				} else if (currentKanaString.equals("fy")) {
 					consonantRow = 28;
+				} else if (currentKanaString.equals("by")) {
+					consonantRow = 29;
 					
 				} else if (currentKanaString.equals("my")) {
-					consonantRow = 29;
-				} else if (currentKanaString.equals("py")) {
 					consonantRow = 30;
+				} else if (currentKanaString.equals("py")) {
+					consonantRow = 31;
 					
 				} else if (currentKanaString.equals("ry")) {
-					consonantRow = 31;
-				} else if (currentKanaString.equals("wy")) {
 					consonantRow = 32;
+				} else if (currentKanaString.equals("wy")) {
+					consonantRow = 33;
 					
 				} else if (currentKanaString.equals("l") || currentKanaString.equals("x")) {
-					consonantRow = 33;
-				} else if (currentKanaString.equals("v")) {
 					consonantRow = 34;
-				} else if (currentKanaString.equals("vy")) {
+				} else if (currentKanaString.equals("v")) {
 					consonantRow = 35;
+				} else if (currentKanaString.equals("vy")) {
+					consonantRow = 36;
 				}
 				
 				if ((vowelColumn > -1) && (consonantRow > -1)) {
 					String kanaFromTable = "";
-					if (kanaType.equals(KanaType.KATAKANA) && (consonantRow == 0)
+					if (kanaType.equals(KanaType.KATAKANA) // 
+						&& (consonantRow == 0) //
+						&& (currentRomaji.length() > 0) //
+						&& (previousRomaji.length() > 0) //
 						&& currentRomaji.equals(previousRomaji.substring(previousRomaji.length() - 1))) {
 						kanaFromTable = "ー";
 					} else {
@@ -269,7 +276,11 @@ public class RomajiToKana {
 						previousRomaji = currentRomaji;
 					}
 				} else {
-					currentKana.append("n");
+					if (kanaType.equals(KanaType.HIRAGANA)) {
+						kana.append("ん");
+					} else {
+						kana.append("ン");
+					}
 				}
 			} else {
 				kana.append(currentKana);

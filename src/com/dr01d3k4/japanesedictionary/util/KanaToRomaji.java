@@ -101,28 +101,12 @@ public class KanaToRomaji {
 			// T set
 		} else if (kanaChar.equals("た") || kanaChar.equals("タ")) {
 			charToAdd = "ta";
-		} else if (kanaChar.equals("つ") || kanaChar.equals("ツ")) {
-			charToAdd = "tsu";
-		} else if (kanaChar.equals("て") || kanaChar.equals("テ")) {
-			if ((c + 1) < kana.length()) {
-				final String next = kana.substring(c + 1, c + 2);
-				if (next.equals("ぁ") || next.equals("ァ") || next.equals("ぃ") || next.equals("ィ") || next.equals("ぅ")
-					|| next.equals("ゥ") || next.equals("ぇ") || next.equals("ェ") || next.equals("ぉ") || next.equals("ォ")) {
-					charToAdd = "t";
-				} else {
-					charToAdd = "te";
-				}
-			} else {
-				charToAdd = "te";
-			}
 		} else if (kanaChar.equals("と") || kanaChar.equals("ト")) {
 			charToAdd = "to";
 			
 			// D set
 		} else if (kanaChar.equals("だ") || kanaChar.equals("ダ")) {
 			charToAdd = "da";
-		} else if (kanaChar.equals("づ") || kanaChar.equals("ヅ")) {
-			charToAdd = "dzu";
 		} else if (kanaChar.equals("で") || kanaChar.equals("デ")) {
 			charToAdd = "de";
 		} else if (kanaChar.equals("ど") || kanaChar.equals("ド")) {
@@ -141,18 +125,6 @@ public class KanaToRomaji {
 			// H set
 		} else if (kanaChar.equals("は") || kanaChar.equals("ハ")) {
 			charToAdd = "ha";
-		} else if (kanaChar.equals("ふ") || kanaChar.equals("フ")) {
-			if ((c + 1) < kana.length()) {
-				final String next = kana.substring(c + 1, c + 2);
-				if (next.equals("ぁ") || next.equals("ァ") || next.equals("ぃ") || next.equals("ィ") || next.equals("ぅ")
-					|| next.equals("ゥ") || next.equals("ぇ") || next.equals("ェ") || next.equals("ぉ") || next.equals("ォ")) {
-					charToAdd = "f";
-				} else {
-					charToAdd = "fu";
-				}
-			} else {
-				charToAdd = "fu";
-			}
 		} else if (kanaChar.equals("へ") || kanaChar.equals("ヘ")) {
 			charToAdd = "he";
 		} else if (kanaChar.equals("ほ") || kanaChar.equals("ホ")) {
@@ -224,6 +196,68 @@ public class KanaToRomaji {
 		} else if (kanaChar.equals("を") || kanaChar.equals("ヲ")) {
 			charToAdd = "wo";
 			
+		// Special cases dependent on next kana
+		} else if (kanaChar.equals("つ") || kanaChar.equals("ツ")) {
+			if ((c + 1) < kana.length()) {
+				final String next = kana.substring(c + 1, c + 2);
+				if (next.equals("ぁ") || next.equals("ァ") || next.equals("ぃ") || next.equals("ィ") || next.equals("ぅ")
+					|| next.equals("ゥ") || next.equals("ぇ") || next.equals("ェ") || next.equals("ぉ") || next.equals("ォ")) {
+					charToAdd = "ts";
+				} else {
+					charToAdd = "tsu";
+				}
+			} else {
+				charToAdd = "tsu";
+			}
+		} else if (kanaChar.equals("て") || kanaChar.equals("テ")) {
+			if ((c + 1) < kana.length()) {
+				final String next = kana.substring(c + 1, c + 2);
+				if (next.equals("ぁ") || next.equals("ァ") || next.equals("ぃ") || next.equals("ィ") || next.equals("ぅ")
+					|| next.equals("ゥ") || next.equals("ぇ") || next.equals("ェ") || next.equals("ぉ") || next.equals("ォ")) {
+					charToAdd = "t";
+				} else {
+					charToAdd = "te";
+				}
+			} else {
+				charToAdd = "te";
+			}
+		} else if (kanaChar.equals("づ") || kanaChar.equals("ヅ")) {
+			if ((c + 1) < kana.length()) {
+				final String next = kana.substring(c + 1, c + 2);
+				if (next.equals("ぁ") || next.equals("ァ") || next.equals("ぃ") || next.equals("ィ") || next.equals("ぅ")
+					|| next.equals("ゥ") || next.equals("ぇ") || next.equals("ェ") || next.equals("ぉ") || next.equals("ォ")) {
+					charToAdd = "dz";
+				} else {
+					charToAdd = "dzu";
+				}
+			} else {
+				charToAdd = "dzu";
+			}
+		} else if (kanaChar.equals("ふ") || kanaChar.equals("フ")) {
+			if ((c + 1) < kana.length()) {
+				final String next = kana.substring(c + 1, c + 2);
+				if (next.equals("ぁ") || next.equals("ァ") || next.equals("ぃ") || next.equals("ィ") || next.equals("ぅ")
+					|| next.equals("ゥ") || next.equals("ぇ") || next.equals("ェ") || next.equals("ぉ") || next.equals("ォ")) {
+					charToAdd = "f";
+				} else {
+					charToAdd = "fu";
+				}
+			} else {
+				charToAdd = "fu";
+			}
+		} else if (kanaChar.equals("ゔ") || kanaChar.equals("ヴ")) {
+			if ((c + 1) < kana.length()) {
+				final String next = kana.substring(c + 1, c + 2);
+				if (next.equals("ぁ") || next.equals("ァ") || next.equals("ぃ") || next.equals("ィ") || next.equals("ぅ")
+					|| next.equals("ゥ") || next.equals("ぇ") || next.equals("ェ") || next.equals("ぉ") || next.equals("ォ")) {
+					charToAdd = "v";
+				} else {
+					charToAdd = "vu";
+				}
+			} else {
+				charToAdd = "vu";
+			}
+			
 			// Single N
 		} else if (kanaChar.equals("ん") || kanaChar.equals("ン")) {
 			final String next = getKanaToRomajiAt(kana, c + 1);
@@ -238,20 +272,6 @@ public class KanaToRomaji {
 				} else {
 					charToAdd = "n";
 				}
-			}
-			
-			// V
-		} else if (kanaChar.equals("ゔ") || kanaChar.equals("ヴ")) {
-			if ((c + 1) < kana.length()) {
-				final String next = kana.substring(c + 1, c + 2);
-				if (next.equals("ぁ") || next.equals("ァ") || next.equals("ぃ") || next.equals("ィ") || next.equals("ぅ")
-					|| next.equals("ゥ") || next.equals("ぇ") || next.equals("ェ") || next.equals("ぉ") || next.equals("ォ")) {
-					charToAdd = "v";
-				} else {
-					charToAdd = "vu";
-				}
-			} else {
-				charToAdd = "vu";
 			}
 			
 			// Little tsu
@@ -308,7 +328,7 @@ public class KanaToRomaji {
 					charToAdd = consonant + "i";
 				}
 				
-				// Everything else such as punctuation
+				// Everything else such as punctuation and numbers
 			} else {
 				charToAdd = kanaChar;
 			}

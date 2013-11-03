@@ -3,7 +3,7 @@
 	android:id="@+id/rlKanaChartLayout"
 	android:layout_width="wrap_content"
 	android:layout_height="wrap_content"
-	android:tag="normal"
+	android:tag="wide_portrait"
 	tools:context=".KanaChartActivity$KanaChartFragment" >
 
 	<TableLayout
@@ -17,21 +17,23 @@
 		android:id="@+id/tlDakutenTable"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_alignParentLeft="true"
-		android:layout_below="@id/tlMainTable" />
+		android:layout_alignParentTop="true"
+		android:layout_marginLeft="16dp"
+		android:layout_toRightOf="@id/tlMainTable" />
 
 	<TableLayout
 		android:id="@+id/tlYTable"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_alignParentLeft="true"
-		android:layout_below="@id/tlDakutenTable" />
+		android:layout_below="@id/tlMainTable" />
 
 	<TableLayout
 		android:id="@+id/tlYDakutenTable"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_alignParentLeft="true"
-		android:layout_below="@id/tlYTable" />
+		android:layout_below="@id/tlMainTable"
+		android:layout_marginLeft="16dp"
+		android:layout_toRightOf="@id/tlYTable" />
 
 </RelativeLayout>
