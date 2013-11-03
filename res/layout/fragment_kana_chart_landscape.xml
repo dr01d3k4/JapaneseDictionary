@@ -1,0 +1,38 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/rlKanaChartLayout"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:tag="landscape"
+	tools:context=".KanaChartActivity$KanaChartFragment" >
+
+	<TableLayout
+		android:id="@+id/tlMainTable"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:layout_alignParentTop="true" />
+
+	<TableLayout
+		android:id="@+id/tlDakutenTable"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:layout_below="@id/tlMainTable"
+		android:shrinkColumns="*" />
+
+	<TableLayout
+		android:id="@+id/tlYTable"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:layout_below="@id/tlDakutenTable" />
+
+	<TableLayout
+		android:id="@+id/tlYDakutenTable"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:layout_below="@id/tlYTable" />
+
+</RelativeLayout>

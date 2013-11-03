@@ -77,10 +77,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int activity_to_kana_test=0x7f030005;
         public static final int activity_word_detail=0x7f030006;
         public static final int fragment_kana_chart=0x7f030007;
-        public static final int fragment_kana_chart_wide_portrait=0x7f030008;
-        public static final int fragment_word_detail=0x7f030009;
-        public static final int kana_chart_item=0x7f03000a;
-        public static final int word_overview=0x7f03000b;
+        public static final int fragment_kana_chart_landscape=0x7f030008;
+        public static final int fragment_kana_chart_wide_portrait=0x7f030009;
+        public static final int fragment_word_detail=0x7f03000a;
+        public static final int kana_chart_item=0x7f03000b;
+        public static final int word_overview=0x7f03000c;
     }
     public static final class menu {
         public static final int main=0x7f090000;

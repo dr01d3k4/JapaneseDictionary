@@ -32,6 +32,7 @@ public class KanaChartActivity extends FragmentActivity implements ActionBar.OnN
 			this);
 
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		// TODO: Make action bar toggle on click
 	}
 	
 	

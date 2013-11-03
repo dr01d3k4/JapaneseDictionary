@@ -30,7 +30,7 @@ public class KanaChartFragment extends Fragment {
 		{"ya", "", "yu", "", "yo"}, //
 		{"ra", "ri", "ru", "re", "ro"}, //
 		{"wa", "wi", "", "we", "wo"}, //
-		{"", "", "n"} //
+		{"", "", "n", "", ""} //
 	};
 	
 	private static final String[][] dakutenTable = { //
@@ -41,13 +41,13 @@ public class KanaChartFragment extends Fragment {
 		{"pa", "pi", "pu", "pe", "po"} //
 	};
 	private static final String[][] dakutenTableGaps = { //
-	{""}, //
+	{"", "", "", "", ""}, //
 		{"ga", "gi", "gu", "ge", "go"}, //
 		{"za", "ji", "zu", "ze", "zo"}, //
 		{"da", "di", "dzu", "de", "do"}, // 
-		{""}, //
+		{"", "", "", "", ""}, //
 		{"ba", "bi", "bu", "be", "bo"},// 
-		{"pa", "pi", "pu", "pe", "po"} //
+		{"pa", "pi", "pu", "pe", "po"}, //
 	};
 	
 	private static final String[][] yTable = { //
@@ -61,19 +61,18 @@ public class KanaChartFragment extends Fragment {
 	};
 	
 	private static final String[][] yDakutenTable = { //
-		{"gya", "gyu", "gyo"}, //
+	{"gya", "gyu", "gyo"}, //
 		{"ja", "ju", "jo"}, //
 		{"dja", "dju", "djo"}, //
 		{"bya", "byu", "byo"}, //
 		{"pya", "pyu", "pyo"}, //
 	};
 	
-
 	private static final String[][] yDakutenTableGaps = { //
-		{"gya", "gyu", "gyo"}, //
+	{"gya", "gyu", "gyo"}, //
 		{"ja", "ju", "jo"}, //
 		{"dja", "dju", "djo"}, //
-		{""}, //
+		{"", "", ""}, //
 		{"bya", "byu", "byo"}, //
 		{"pya", "pyu", "pyo"}, //
 	};
@@ -87,35 +86,55 @@ public class KanaChartFragment extends Fragment {
 	}
 	
 	
-	private void fillInTable(String tableName, String[][] table, KanaType kanaType, TableLayout tableLayout,
-		LayoutInflater inflater, ViewGroup container) {
-		TableRow titleRow = new TableRow(getActivity());
-		titleRow.setLayoutParams(rowLayoutParams);
-		TextView titleText = new TextView(getActivity());
-		titleText.setText(tableName);
-		titleText.setTextSize(32);
-		titleText.setGravity(Gravity.CENTER);
-		TableRow.LayoutParams titleLayoutParams = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,
-			TableRow.LayoutParams.WRAP_CONTENT);
-		titleText.setLayoutParams(titleLayoutParams);
-		titleLayoutParams.span = 5;
-		titleRow.addView(titleText);
-		tableLayout.addView(titleRow);
-		
-		for (int consonant = 0; consonant < table.length; consonant++) {
-			TableRow row = new TableRow(getActivity());
-			row.setLayoutParams(rowLayoutParams);
-			for (int vowel = 0; vowel < table[consonant].length; vowel++) {
-				View kanaItem = inflater.inflate(R.layout.kana_chart_item, container, false);
-				kanaItem.setLayoutParams(rowLayoutParams);
-				
-				((TextView) kanaItem.findViewById(R.id.tvKanaChar)).setText(RomajiToKana.romajiToKana(
-					table[consonant][vowel], kanaType));
-				((TextView) kanaItem.findViewById(R.id.tvRomajiChar)).setText(table[consonant][vowel]);
-				
-				row.addView(kanaItem);
+	private void fillInTable(String tableName, String[][] table, KanaType kanaType, boolean isVertical,
+		TableLayout tableLayout, LayoutInflater inflater, ViewGroup container) {
+		// TODO: Add row and column titles
+		if (isVertical) {
+			TableRow titleRow = new TableRow(getActivity());
+			titleRow.setLayoutParams(rowLayoutParams);
+			TextView titleText = new TextView(getActivity());
+			titleText.setText(tableName);
+			titleText.setTextSize(32);
+			titleText.setGravity(Gravity.CENTER);
+			TableRow.LayoutParams titleLayoutParams = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,
+				TableRow.LayoutParams.WRAP_CONTENT);
+			titleText.setLayoutParams(titleLayoutParams);
+			titleLayoutParams.span = 5;
+			titleRow.addView(titleText);
+			tableLayout.addView(titleRow);
+			
+			for (int consonant = 0; consonant < table.length; consonant++) {
+				TableRow row = new TableRow(getActivity());
+				row.setLayoutParams(rowLayoutParams);
+				for (int vowel = 0; vowel < table[consonant].length; vowel++) {
+					View kanaItem = inflater.inflate(R.layout.kana_chart_item, container, false);
+					kanaItem.setLayoutParams(rowLayoutParams);
+					
+					((TextView) kanaItem.findViewById(R.id.tvKanaChar)).setText(RomajiToKana.romajiToKana(
+						table[consonant][vowel], kanaType));
+					((TextView) kanaItem.findViewById(R.id.tvRomajiChar)).setText(table[consonant][vowel]);
+					
+					row.addView(kanaItem);
+				}
+				tableLayout.addView(row);
 			}
-			tableLayout.addView(row);
+		} else {
+			// TODO: Fix padding, change sizes
+			for (int vowel = 0; vowel < table[0].length; vowel++) {
+				TableRow row = new TableRow(getActivity());
+				row.setLayoutParams(rowLayoutParams);
+				for (int consonant = table.length - 1; consonant >= 0; consonant--) {
+					View kanaItem = inflater.inflate(R.layout.kana_chart_item, container, false);
+					kanaItem.setLayoutParams(rowLayoutParams);
+					
+					((TextView) kanaItem.findViewById(R.id.tvKanaChar)).setText(RomajiToKana.romajiToKana(
+						table[consonant][vowel], kanaType));
+					((TextView) kanaItem.findViewById(R.id.tvRomajiChar)).setText(table[consonant][vowel]);
+					
+					row.addView(kanaItem);
+				}
+				tableLayout.addView(row);
+			}
 		}
 	}
 	
@@ -128,19 +147,22 @@ public class KanaChartFragment extends Fragment {
 		RelativeLayout relativeLayout = (RelativeLayout) rootView.findViewById(R.id.rlKanaChartLayout);
 		String layoutType = (String) relativeLayout.getTag();
 		
+		boolean isVertical = layoutType.equals("normal") || layoutType.equals("wide_portrait");
+		boolean isWide = !layoutType.equals("normal"); // layoutType.equals("wide_portrait") || layoutType.equals("landscape");
+		
 		TableLayout mainTableLayout = (TableLayout) rootView.findViewById(R.id.tlMainTable);
-		fillInTable("Main", mainTable, kanaType, mainTableLayout, inflater, container);
+		fillInTable("Main", mainTable, kanaType, isVertical, mainTableLayout, inflater, container);
 		
 		TableLayout dakutenTableLayout = (TableLayout) rootView.findViewById(R.id.tlDakutenTable);
-		fillInTable("Dakuten", layoutType.equals("wide_portrait") ? dakutenTableGaps : dakutenTable, kanaType,
-			dakutenTableLayout, inflater, container);
+		fillInTable("Dakuten", isWide ? dakutenTableGaps : dakutenTable, kanaType, isVertical, dakutenTableLayout,
+			inflater, container);
 		
 		TableLayout yTableLayout = (TableLayout) rootView.findViewById(R.id.tlYTable);
-		fillInTable("Y Table", yTable, kanaType, yTableLayout, inflater, container);
+		fillInTable("Y Table", yTable, kanaType, isVertical, yTableLayout, inflater, container);
 		
 		TableLayout yDakutenTableLayout = (TableLayout) rootView.findViewById(R.id.tlYDakutenTable);
-		fillInTable("Y Dakuten", layoutType.equals("wide_portrait") ? yDakutenTableGaps : yDakutenTable, kanaType,
-			yDakutenTableLayout, inflater, container);
+		fillInTable("Y Dakuten", isWide ? yDakutenTableGaps : yDakutenTable, kanaType, isVertical, yDakutenTableLayout,
+			inflater, container);
 		
 		return rootView;
 	}
