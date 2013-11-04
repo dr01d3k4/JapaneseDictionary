@@ -28,10 +28,6 @@
 	<string name="action_kana_chart">Kana chart</string>
 	<string name="action_kana_chart_condensed">あアA</string>
 
-	<!-- Kana chart -->
-	<string name="title_hiragana_chart">ひらがな Hiragana</string>
-	<string name="title_katakana_chart">カタカナ Katakana</string>
-
 	<!-- Romanization -->
 	<string name="romanize_hint">Enter kana to romanize</string>
 	<string name="to_kana_hint">Enter romaji to convert to kana</string>
@@ -40,6 +36,5 @@
 	<string name="switch_katakana">Katakana</string>
 	<string name="switch_kana">Kana type: </string>
 	<string name="title_activity_searching">Searching</string>
-	<string name="hello_world">Hello world!</string>
 
 </resources>
