@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Switch xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/swHiraganaOrKatakana"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:layout_alignParentLeft="true"
+	android:layout_below="@id/btEnterButton"
+	android:layout_marginRight="16dp"
+	android:checked="true"
+	android:textOff="@string/switch_katakana"
+	android:textOn="@string/switch_hiragana"
+	android:textSize="18sp" />

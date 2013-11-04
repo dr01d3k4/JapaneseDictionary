@@ -26,6 +26,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
+
+         Customize dimensions originally defined in res/values/dimens.xml (such as
+         screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
+	
          */
         public static final int activity_horizontal_margin=0x7f060000;
         public static final int activity_vertical_margin=0x7f060001;
@@ -39,91 +43,99 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_kana_chart=0x7f0a001b;
-        public static final int action_settings=0x7f0a001a;
+        public static final int action_kana_chart=0x7f0a001d;
+        public static final int action_kana_toggle=0x7f0a001b;
+        public static final int action_settings=0x7f0a001c;
         public static final int btEnterButton=0x7f0a0007;
         public static final int btSearchButton=0x7f0a0003;
         public static final int btTryRomanizationTest=0x7f0a0004;
         public static final int btTryToKanaTest=0x7f0a0005;
         public static final int etSearchText=0x7f0a0002;
-        public static final int etToKanaText=0x7f0a000b;
+        public static final int etToKanaText=0x7f0a000a;
         public static final int etToRomanizeText=0x7f0a0006;
-        public static final int fgSearchResultList=0x7f0a0009;
+        public static final int fgWordOverviewList=0x7f0a000e;
         public static final int flContainer=0x7f0a0001;
-        public static final int flSearchResultDetailContainer=0x7f0a000a;
-        public static final int rbLearningState=0x7f0a0016;
-        public static final int rlKanaChartLayout=0x7f0a000e;
+        public static final int flWordDetailContainer=0x7f0a000d;
+        public static final int pbSearchProgress=0x7f0a0009;
+        public static final int rbLearningState=0x7f0a0017;
+        public static final int rlKanaChartLayout=0x7f0a000f;
         public static final int svKanaChartBackground=0x7f0a0000;
-        public static final int swHiraganaOrKatakana=0x7f0a000c;
-        public static final int tlDakutenTable=0x7f0a0010;
-        public static final int tlMainTable=0x7f0a000f;
-        public static final int tlYDakutenTable=0x7f0a0012;
-        public static final int tlYTable=0x7f0a0011;
-        public static final int tvDisplayKana=0x7f0a000d;
+        public static final int swHiraganaOrKatakana=0x7f0a000b;
+        public static final int tlDakutenTable=0x7f0a0011;
+        public static final int tlMainTable=0x7f0a0010;
+        public static final int tlYDakutenTable=0x7f0a0013;
+        public static final int tlYTable=0x7f0a0012;
+        public static final int tvDisplayKana=0x7f0a000c;
         public static final int tvDisplayRomanized=0x7f0a0008;
-        public static final int tvEnglish=0x7f0a0019;
-        public static final int tvKana=0x7f0a0018;
-        public static final int tvKanaChar=0x7f0a0014;
-        public static final int tvKanji=0x7f0a0017;
-        public static final int tvRomajiChar=0x7f0a0015;
-        public static final int tvSearchResultDetail=0x7f0a0013;
+        public static final int tvEnglish=0x7f0a001a;
+        public static final int tvKana=0x7f0a0019;
+        public static final int tvKanaChar=0x7f0a0015;
+        public static final int tvKanji=0x7f0a0018;
+        public static final int tvRomajiChar=0x7f0a0016;
+        public static final int tvWordDetail=0x7f0a0014;
     }
     public static final class layout {
         public static final int activity_kana_chart=0x7f030000;
         public static final int activity_main=0x7f030001;
         public static final int activity_romanization_test=0x7f030002;
-        public static final int activity_searchresult_list=0x7f030003;
-        public static final int activity_searchresult_twopane=0x7f030004;
-        public static final int activity_to_kana_test=0x7f030005;
-        public static final int activity_word_detail=0x7f030006;
-        public static final int fragment_kana_chart=0x7f030007;
-        public static final int fragment_kana_chart_landscape=0x7f030008;
-        public static final int fragment_kana_chart_wide_portrait=0x7f030009;
-        public static final int fragment_word_detail=0x7f03000a;
-        public static final int kana_chart_item=0x7f03000b;
-        public static final int word_overview=0x7f03000c;
+        public static final int activity_searching=0x7f030003;
+        public static final int activity_to_kana_test=0x7f030004;
+        public static final int activity_word_detail=0x7f030005;
+        public static final int activity_word_overview_list=0x7f030006;
+        public static final int activity_word_overview_two_pane=0x7f030007;
+        public static final int fragment_kana_chart=0x7f030008;
+        public static final int fragment_kana_chart_landscape=0x7f030009;
+        public static final int fragment_kana_chart_wide_portrait=0x7f03000a;
+        public static final int fragment_word_detail=0x7f03000b;
+        public static final int kana_chart_item=0x7f03000c;
+        public static final int kana_switch=0x7f03000d;
+        public static final int word_overview=0x7f03000e;
     }
     public static final class menu {
-        public static final int main=0x7f090000;
+        public static final int kana_chart=0x7f090000;
+        public static final int main=0x7f090001;
     }
     public static final class string {
         /**  Menu actions 
          */
-        public static final int action_kana_chart=0x7f07000d;
-        public static final int action_kana_chart_condensed=0x7f07000e;
+        public static final int action_kana_chart=0x7f07000e;
+        public static final int action_kana_chart_condensed=0x7f07000f;
+        public static final int action_kana_toggle=0x7f070002;
         public static final int action_settings=0x7f070001;
         public static final int app_name=0x7f070000;
-        public static final int english_test=0x7f07000a;
-        public static final int enter=0x7f070013;
-        public static final int kana_test=0x7f070009;
+        public static final int english_test=0x7f07000b;
+        public static final int enter=0x7f070014;
+        public static final int hello_world=0x7f070019;
+        public static final int kana_test=0x7f07000a;
         /**  Word overview test 
          */
-        public static final int kanji_test=0x7f070008;
+        public static final int kanji_test=0x7f070009;
         /**  Word learning states 
          */
-        public static final int learning_progress=0x7f07000b;
+        public static final int learning_progress=0x7f07000c;
         /**  Romanization 
          */
-        public static final int romanize_hint=0x7f070011;
-        public static final int search=0x7f070007;
+        public static final int romanize_hint=0x7f070012;
+        public static final int search=0x7f070008;
         /**  Home page 
          */
-        public static final int search_hint=0x7f070006;
-        public static final int switch_hiragana=0x7f070014;
-        public static final int switch_kana=0x7f070016;
-        public static final int switch_katakana=0x7f070015;
-        public static final int title_activity_kana_chart=0x7f07000c;
-        public static final int title_activity_romanization_test=0x7f070004;
-        public static final int title_activity_to_kana_test=0x7f070005;
+        public static final int search_hint=0x7f070007;
+        public static final int switch_hiragana=0x7f070015;
+        public static final int switch_kana=0x7f070017;
+        public static final int switch_katakana=0x7f070016;
+        public static final int title_activity_kana_chart=0x7f07000d;
+        public static final int title_activity_romanization_test=0x7f070005;
+        public static final int title_activity_searching=0x7f070018;
+        public static final int title_activity_to_kana_test=0x7f070006;
         /**  Kana chart 
          */
-        public static final int title_hiragana_chart=0x7f07000f;
-        public static final int title_katakana_chart=0x7f070010;
+        public static final int title_hiragana_chart=0x7f070010;
+        public static final int title_katakana_chart=0x7f070011;
         /**  Titles 
          */
-        public static final int title_searchresult_list=0x7f070002;
-        public static final int title_word_detail=0x7f070003;
-        public static final int to_kana_hint=0x7f070012;
+        public static final int title_searchresult_list=0x7f070003;
+        public static final int title_word_detail=0x7f070004;
+        public static final int to_kana_hint=0x7f070013;
     }
     public static final class style {
         /** 

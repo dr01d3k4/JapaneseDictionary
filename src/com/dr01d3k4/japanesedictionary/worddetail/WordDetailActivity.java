@@ -1,10 +1,9 @@
-package com.dr01d3k4.japanesedictionary.searchresult;
+package com.dr01d3k4.japanesedictionary.worddetail;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NavUtils;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import com.dr01d3k4.japanesedictionary.R;
@@ -19,20 +18,13 @@ public class WordDetailActivity extends FragmentActivity {
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		
 		if (savedInstanceState == null) {
-			final Bundle arguments = new Bundle();
-			arguments.putString(WordDetailFragment.ARG_ITEM_ID, getIntent().getStringExtra(
-				WordDetailFragment.ARG_ITEM_ID));
-			final WordDetailFragment fragment = new WordDetailFragment();
-			fragment.setArguments(arguments);
-			getSupportFragmentManager().beginTransaction().add(R.id.flSearchResultDetailContainer, fragment).commit();
+			// final Bundle arguments = new Bundle();
+			// arguments.putString(WordDetailFragment.ARG_ITEM_ID, getIntent().getStringExtra(
+			// WordDetailFragment.ARG_ITEM_ID));
+			// final WordDetailFragment fragment = new WordDetailFragment();
+			// fragment.setArguments(arguments);
+			// getSupportFragmentManager().beginTransaction().add(R.id.flWordDetailContainer, fragment).commit();
 		}
-	}
-	
-	
-	@Override
-	public boolean onCreateOptionsMenu(final Menu menu) {
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
 	}
 	
 	
@@ -40,7 +32,7 @@ public class WordDetailActivity extends FragmentActivity {
 	public boolean onOptionsItemSelected(final MenuItem item) {
 		switch (item.getItemId()) {
 			case android.R.id.home:
-				NavUtils.navigateUpTo(this, new Intent(this, SearchResultListActivity.class));
+				NavUtils.navigateUpTo(this, new Intent(this, WordOverviewListActivity.class));
 				return true;
 		}
 		return super.onOptionsItemSelected(item);

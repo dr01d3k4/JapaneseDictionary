@@ -1,5 +1,5 @@
 <resources>
 
-	<item name="activity_searchresult_list" type="layout">@layout/activity_searchresult_twopane</item>
+	<item name="activity_word_overview_list" type="layout">@layout/activity_word_overview_two_pane</item>
 
 </resources>

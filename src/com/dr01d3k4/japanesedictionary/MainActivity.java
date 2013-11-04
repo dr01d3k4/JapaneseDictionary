@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.dr01d3k4.japanesedictionary.kanachart.KanaChartActivity;
-import com.dr01d3k4.japanesedictionary.searchresult.SearchResultListActivity;
 
 
 public class MainActivity extends Activity {
@@ -30,8 +29,21 @@ public class MainActivity extends Activity {
 	}
 	
 	
+	public void performSearch() {
+		final EditText searchTextView = (EditText) findViewById(R.id.etSearchText);
+		final String searchText = searchTextView.getText().toString();
+		
+		final Intent intent = new Intent(this, SearchingActivity.class);
+		final Bundle extras = new Bundle();
+		extras.putString(SearchingActivity.ARG_SEARCH_TERM, searchText);
+		intent.putExtras(extras);
+		startActivity(intent);
+		// startActivity(new Intent(this, SearchResultListActivity.class));
+	}
+	
+	
 	public void onSearchClicked(final View view) {
-		startActivity(new Intent(this, SearchResultListActivity.class));
+		performSearch();
 	}
 	
 	

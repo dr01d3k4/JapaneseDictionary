@@ -28,9 +28,9 @@
 			</intent-filter>
 		</activity>
 
-		<!-- Search Result List Activity -->
+		<!-- Word Overview List Activity -->
 		<activity
-			android:name="com.dr01d3k4.japanesedictionary.searchresult.SearchResultListActivity"
+			android:name="com.dr01d3k4.japanesedictionary.worddetail.WordOverviewListActivity"
 			android:label="@string/title_searchresult_list"
 			android:parentActivityName="com.dr01d3k4.japanesedictionary.MainActivity" >
 			<meta-data
@@ -40,9 +40,9 @@
 
 		<!-- Word Detail Activity -->
 		<activity
-			android:name="com.dr01d3k4.japanesedictionary.searchresult.WordDetailActivity"
+			android:name="com.dr01d3k4.japanesedictionary.worddetail.WordDetailActivity"
 			android:label="@string/title_word_detail"
-			android:parentActivityName="com.dr01d3k4.japanesedictionary.searchresult.SearchResultListActivity" >
+			android:parentActivityName="com.dr01d3k4.japanesedictionary.worddetail.WordOverviewListActivity" >
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
 				android:value="com.dr01d3k4.japanesedictionary.searchresult.SearchResultListActivity" />
@@ -78,6 +78,12 @@
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
 				android:value="com.dr01d3k4.japanesedictionary.MainActivity" />
+		</activity>
+
+		<!-- Searching Activity -->
+		<activity
+			android:name="com.dr01d3k4.japanesedictionary.SearchingActivity"
+			android:label="@string/title_activity_searching" >
 		</activity>
 	</application>
 

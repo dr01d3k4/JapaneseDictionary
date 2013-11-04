@@ -44,7 +44,7 @@ public class ToKanaTest extends Activity {
 		final Switch kanaSwitch = (Switch) findViewById(R.id.swHiraganaOrKatakana);
 		kanaSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 			@Override
-			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+			public void onCheckedChanged(final CompoundButton buttonView, final boolean isChecked) {
 				convertRomajiToKana();
 			}
 		});

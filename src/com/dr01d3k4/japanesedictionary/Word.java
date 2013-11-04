@@ -43,7 +43,7 @@ public final class Word implements Parcelable {
 		this.kanji = kanji;
 		this.kana = kana;
 		this.english = english;
-		learningState = WordLearningState.values()[random.nextInt(3)];
+		learningState = WordLearningState.values()[Word.random.nextInt(3)];
 		// WordLearningState.NOT_LEARNT;
 	}
 	

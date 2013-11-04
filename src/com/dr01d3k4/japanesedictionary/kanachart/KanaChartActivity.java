@@ -4,18 +4,22 @@ import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NavUtils;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.Switch;
 
 import com.dr01d3k4.japanesedictionary.R;
 import com.dr01d3k4.japanesedictionary.util.KanaType;
 
 
-public class KanaChartActivity extends FragmentActivity implements ActionBar.OnNavigationListener {
+public class KanaChartActivity extends FragmentActivity {
 	private static final String STATE_SELECTED_NAVIGATION_ITEM = "selected_navigation_item";
 	
 	private KanaType chartType = KanaType.HIRAGANA;
+	
 	
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {
@@ -23,32 +27,57 @@ public class KanaChartActivity extends FragmentActivity implements ActionBar.OnN
 		setContentView(R.layout.activity_kana_chart);
 		
 		final ActionBar actionBar = getActionBar();
-		actionBar.setDisplayShowTitleEnabled(false);
-		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
 		actionBar.setDisplayHomeAsUpEnabled(true);
-		
-		actionBar.setListNavigationCallbacks(new ArrayAdapter<String>(actionBar.getThemedContext(),
-			android.R.layout.simple_list_item_1, android.R.id.text1, getResources().getStringArray(R.array.kana_type)),
-			this);
-
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		// TODO: Make action bar toggle on click
+		
+		changeChart();
+	}
+	
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.kana_chart, menu);
+		Switch kanaToggle = (Switch) menu.findItem(R.id.action_kana_toggle).getActionView();
+		kanaToggle.setChecked(chartType == KanaType.HIRAGANA);
+		kanaToggle.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				if (isChecked) {
+					chartType = KanaType.HIRAGANA;
+				} else {
+					chartType = KanaType.KATAKANA;
+				}
+				changeChart();
+			}
+			
+		});
+		
+		return super.onCreateOptionsMenu(menu);
+	}
+	
+	
+	private void changeChart() {
+		KanaChartFragment kanaChart = new KanaChartFragment();
+		Bundle arguments = new Bundle();
+		arguments.putInt(KanaChartFragment.ARG_KANA_TYPE, chartType.ordinal());
+		kanaChart.setArguments(arguments);
+		getSupportFragmentManager().beginTransaction().replace(R.id.flContainer, kanaChart).commit();
 	}
 	
 	
 	@Override
 	public void onRestoreInstanceState(final Bundle savedInstanceState) {
 		if (savedInstanceState.containsKey(STATE_SELECTED_NAVIGATION_ITEM)) {
-			final int selectedItem = savedInstanceState.getInt(STATE_SELECTED_NAVIGATION_ITEM);
-			chartType = KanaType.values()[selectedItem];
-			getActionBar().setSelectedNavigationItem(selectedItem);
+			chartType = KanaType.values()[savedInstanceState.getInt(STATE_SELECTED_NAVIGATION_ITEM)];
+			changeChart();
 		}
 	}
 	
 	
 	@Override
 	public void onSaveInstanceState(final Bundle outState) {
-		outState.putInt(STATE_SELECTED_NAVIGATION_ITEM, getActionBar().getSelectedNavigationIndex());
+		outState.putInt(STATE_SELECTED_NAVIGATION_ITEM, chartType.ordinal());
 	}
 	
 	
@@ -60,19 +89,5 @@ public class KanaChartActivity extends FragmentActivity implements ActionBar.OnN
 				return true;
 		}
 		return super.onOptionsItemSelected(item);
-	}
-	
-	
-	@Override
-	public boolean onNavigationItemSelected(final int position, final long id) {
-		chartType = KanaType.values()[position];
-		
-		final KanaChartFragment kanaChart = new KanaChartFragment();
-		final Bundle arguments = new Bundle();
-		arguments.putInt(KanaChartFragment.ARG_KANA_TYPE, chartType.ordinal());
-		kanaChart.setArguments(arguments);
-		getSupportFragmentManager().beginTransaction().replace(R.id.flContainer, kanaChart).commit();
-		
-		return true;
 	}
 }
