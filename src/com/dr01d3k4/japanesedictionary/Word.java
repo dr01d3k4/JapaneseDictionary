@@ -7,13 +7,10 @@ import android.os.Parcelable;
 
 
 public final class Word implements Parcelable {
-	// private final int lineInDictionary;
-	//
 	// Form of dictionary:
 	// KANJI-1;KANJI-2 [KANA-1;KANA-2]/(general-information) gloss/gloss/.../EntLnnnnnnnX/
 	// The EntLnnnnnnn is the UID for the entry. May end with X if sound file on JapanesePod101.com
 	//
-	// TODO: Finish this regex
 	// In general information section, (1), (2) etc may be used to show multiple senses
 	// [kanji]-(;[kanji]-)* *
 	// \[[kana]-(;[kana])*\] */
@@ -27,24 +24,20 @@ public final class Word implements Parcelable {
 	// English = .+
 	
 	// [kanji]-(;[kanji]-)* *\[[kana]-(;[kana])*\] */(( *\([general_information]\))*( *[english]+)+)+ */ *EntL[0-9]{8}X? */
-	// private final String dataFromDictionary;
 	
-	private final String kanji, kana, english;
+	private final String kanji, kana, english, edictId;
 	private final WordLearningState learningState;
 	
 	private static Random random = new Random();
 	
 	
-	public Word(final String kanji, final String kana, final String english) {
-		// final int lineInDictionary, final String dataFromDictionary) {
-		// this.lineInDictionary = lineInDictionary;
-		// this.dataFromDictionary = dataFromDictionary;
-		
+	public Word(final String kanji, final String kana, final String english, final String edictId) {
 		this.kanji = kanji;
 		this.kana = kana;
 		this.english = english;
+		this.edictId = edictId;
 		learningState = WordLearningState.values()[Word.random.nextInt(3)];
-		// WordLearningState.NOT_LEARNT;
+
 	}
 	
 	
@@ -60,6 +53,10 @@ public final class Word implements Parcelable {
 	
 	public String getEnglish() {
 		return english; // "(n) Gravity";
+	}
+	
+	public String getEdictId() {
+		return edictId;
 	}
 	
 	
@@ -79,9 +76,8 @@ public final class Word implements Parcelable {
 		out.writeString(kanji);
 		out.writeString(kana);
 		out.writeString(english);
+		out.writeString(edictId);
 		out.writeInt(learningState.ordinal());
-		// out.writeInt(lineInDictionary);
-		// out.writeString(dataFromDictionary);
 	}
 	
 	public static final Parcelable.Creator<Word> CREATOR = new Parcelable.Creator<Word>() {
@@ -102,8 +98,7 @@ public final class Word implements Parcelable {
 		kanji = in.readString();
 		kana = in.readString();
 		english = in.readString();
+		edictId = in.readString();
 		learningState = WordLearningState.values()[in.readInt()];
-		// lineInDictionary = in.readInt();
-		// dataFromDictionary = in.readString();
 	}
 }

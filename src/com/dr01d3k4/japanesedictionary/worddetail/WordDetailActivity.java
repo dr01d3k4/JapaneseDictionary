@@ -7,6 +7,7 @@ import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 
 import com.dr01d3k4.japanesedictionary.R;
+import com.dr01d3k4.japanesedictionary.Word;
 
 
 public class WordDetailActivity extends FragmentActivity {
@@ -16,6 +17,9 @@ public class WordDetailActivity extends FragmentActivity {
 		setContentView(R.layout.activity_word_detail);
 		
 		getActionBar().setDisplayHomeAsUpEnabled(true);
+		
+		Word word = (Word) getIntent().getExtras().getParcelable(WordOverviewListActivity.ARG_WORD_SELECTED);
+		getActionBar().setTitle(word.getKanji());
 		
 		if (savedInstanceState == null) {
 			// final Bundle arguments = new Bundle();

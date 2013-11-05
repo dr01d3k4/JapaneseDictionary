@@ -80,8 +80,6 @@ public class WordOverviewListFragment extends ListFragment {
 	@Override
 	public void onListItemClick(final ListView listView, final View view, final int position, final long id) {
 		super.onListItemClick(listView, view, position, id);
-		
-		// TODO: Pass proper word information to parent activity
 		Log.d("Selected", "" + position);
 		mCallbacks.onItemSelected(words[position]);
 	}

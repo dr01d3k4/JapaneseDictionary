@@ -3,10 +3,14 @@ package com.dr01d3k4.japanesedictionary;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.TextView.OnEditorActionListener;
 
 import com.dr01d3k4.japanesedictionary.kanachart.KanaChartActivity;
 
@@ -19,6 +23,18 @@ public class MainActivity extends Activity {
 		final EditText searchText = (EditText) findViewById(R.id.etSearchText);
 		searchText.setFocusableInTouchMode(true);
 		searchText.requestFocus();
+		
+		searchText.setOnEditorActionListener(new OnEditorActionListener() {
+			@Override
+			public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+				if ((actionId & EditorInfo.IME_MASK_ACTION) == EditorInfo.IME_ACTION_DONE) {
+					performSearch();
+					return true;
+				} else {
+					return false;
+				}
+			}
+		});
 	}
 	
 	

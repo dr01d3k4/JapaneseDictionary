@@ -15,6 +15,7 @@ import com.dr01d3k4.japanesedictionary.kanachart.KanaChartActivity;
 public class WordOverviewListActivity extends FragmentActivity implements WordOverviewListFragment.Callbacks {
 	public static final String ARG_WORD_LIST = "word_list";
 	public static final String ARG_WORD_SELECTED = "word_selected";
+	public static final String ARG_TITLE = "title";
 	private boolean mTwoPane;
 	
 	
@@ -23,6 +24,11 @@ public class WordOverviewListActivity extends FragmentActivity implements WordOv
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_word_overview_list);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
+		
+		Bundle extras = getIntent().getExtras();
+		if (extras.getString(ARG_TITLE) != null) {
+			getActionBar().setTitle(extras.getString(ARG_TITLE));
+		}
 		
 		if (findViewById(R.id.flWordDetailContainer) != null) {
 			mTwoPane = true;
