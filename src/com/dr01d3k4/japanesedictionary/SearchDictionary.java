@@ -22,8 +22,8 @@ public final class SearchDictionary {
 		if (searchTerm.equals("")) {
 			return new Word[] { };
 		}
-		ArrayList<Word> words = new ArrayList<Word>();
-		AssetManager assetManager = context.getAssets();
+		final ArrayList<Word> words = new ArrayList<Word>();
+		final AssetManager assetManager = context.getAssets();
 		InputStream inputStream;
 		BufferedReader bufferedReader;
 		try {
@@ -34,7 +34,7 @@ public final class SearchDictionary {
 			String inputLine;
 			while ((inputLine = bufferedReader.readLine()) != null) {
 				if (inputLine.contains(searchTerm)) {
-					Matcher matcher = wordPattern.matcher(inputLine);
+					final Matcher matcher = SearchDictionary.wordPattern.matcher(inputLine);
 					String kanji = "", kana = "", english = "", id = "";
 					if (matcher.find()) {
 						Log.d("Matches", inputLine);
@@ -64,7 +64,7 @@ public final class SearchDictionary {
 			bufferedReader.close();
 			inputStream.close();
 			return words.toArray(new Word[words.size()]);
-		} catch (IOException e) {
+		} catch (final IOException e) {
 			return new Word[] { };
 		}
 	}

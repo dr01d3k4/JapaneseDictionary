@@ -37,7 +37,7 @@ public final class Word implements Parcelable {
 		this.english = english;
 		this.edictId = edictId;
 		learningState = WordLearningState.values()[Word.random.nextInt(3)];
-
+		
 	}
 	
 	
@@ -54,6 +54,7 @@ public final class Word implements Parcelable {
 	public String getEnglish() {
 		return english; // "(n) Gravity";
 	}
+	
 	
 	public String getEdictId() {
 		return edictId;

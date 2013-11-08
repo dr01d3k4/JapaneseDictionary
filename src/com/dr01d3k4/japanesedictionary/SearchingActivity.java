@@ -25,7 +25,7 @@ public class SearchingActivity extends Activity {
 			@Override
 			public void run() {
 				try {
-					sleep(100);
+					Thread.sleep(100);
 				} catch (final InterruptedException e) {
 					e.printStackTrace();
 				} finally {

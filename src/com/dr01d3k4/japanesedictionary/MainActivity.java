@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
 		
 		searchText.setOnEditorActionListener(new OnEditorActionListener() {
 			@Override
-			public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+			public boolean onEditorAction(final TextView v, final int actionId, final KeyEvent event) {
 				if ((actionId & EditorInfo.IME_MASK_ACTION) == EditorInfo.IME_ACTION_DONE) {
 					performSearch();
 					return true;

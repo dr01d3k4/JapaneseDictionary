@@ -1,20 +1,19 @@
 package com.dr01d3k4.japanesedictionary.worddetail;
 
+import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.dr01d3k4.japanesedictionary.R;
-import com.dr01d3k4.japanesedictionary.dummy.DummyContent;
 
 
 public class WordDetailFragment extends Fragment {
 	public static final String ARG_ITEM_ID = "item_id";
-	private DummyContent.DummyItem mItem;
 	
+	
+	// private DummyContent.DummyItem mItem;
 	
 	public WordDetailFragment() {}
 	
@@ -25,7 +24,7 @@ public class WordDetailFragment extends Fragment {
 		
 		if (getArguments().containsKey(ARG_ITEM_ID)) {
 			// mItem = DummyContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
-			mItem = DummyContent.ITEMS.get(0);
+			// mItem = DummyContent.ITEMS.get(0);
 		}
 	}
 	
@@ -33,9 +32,9 @@ public class WordDetailFragment extends Fragment {
 	@Override
 	public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
 		final View rootView = inflater.inflate(R.layout.fragment_word_detail, container, false);
-		if (mItem != null) {
-			((TextView) rootView.findViewById(R.id.tvWordDetail)).setText(mItem.content);
-		}
+		// if (mItem != null) {
+		// 	((TextView) rootView.findViewById(R.id.tvWordDetail)).setText(mItem.content);
+		// }
 		return rootView;
 	}
 }

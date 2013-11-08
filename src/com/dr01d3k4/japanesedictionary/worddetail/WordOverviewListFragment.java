@@ -3,7 +3,7 @@ package com.dr01d3k4.japanesedictionary.worddetail;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.v4.app.ListFragment;
+import android.app.ListFragment;
 import android.util.Log;
 import android.view.View;
 import android.widget.AbsListView;
@@ -38,7 +38,8 @@ public class WordOverviewListFragment extends ListFragment {
 	public void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		Parcelable[] parcelables = getActivity().getIntent().getExtras().getParcelableArray(WordOverviewListActivity.ARG_WORD_LIST);
+		Parcelable[] parcelables = getActivity().getIntent().getExtras().getParcelableArray(
+			WordOverviewListActivity.ARG_WORD_LIST);
 		words = new Word[parcelables.length];
 		for (int i = 0; i < parcelables.length; i++) {
 			words[i] = (Word) parcelables[i];

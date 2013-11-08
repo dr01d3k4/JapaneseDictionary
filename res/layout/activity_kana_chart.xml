@@ -1,4 +1,4 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.dr01d3k4.japanesedictionary.kanachart.KanaChartScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:id="@+id/svKanaChartBackground"
 	android:layout_width="match_parent"
@@ -13,9 +13,9 @@
 
 	<FrameLayout
 		android:id="@+id/flContainer"
-		android:layout_width="match_parent"
+		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		tools:context=".KanaChartActivity"
 		tools:ignore="MergeRootFrame" />
 
-</ScrollView>
+</com.dr01d3k4.japanesedictionary.kanachart.KanaChartScrollView>

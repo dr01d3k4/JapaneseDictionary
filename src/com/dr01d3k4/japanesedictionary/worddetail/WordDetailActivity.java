@@ -1,16 +1,17 @@
 package com.dr01d3k4.japanesedictionary.worddetail;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NavUtils;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import com.dr01d3k4.japanesedictionary.R;
 import com.dr01d3k4.japanesedictionary.Word;
 
 
-public class WordDetailActivity extends FragmentActivity {
+public class WordDetailActivity extends Activity {
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -29,6 +30,13 @@ public class WordDetailActivity extends FragmentActivity {
 			// fragment.setArguments(arguments);
 			// getSupportFragmentManager().beginTransaction().add(R.id.flWordDetailContainer, fragment).commit();
 		}
+	}
+	
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.word_detail_menu, menu);
+		return super.onCreateOptionsMenu(menu);
 	}
 	
 	
